@@ -1,3 +1,4 @@
+ruby '2.4.3'
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -9,7 +10,6 @@ gem 'json'
 gem 'simple_form'
 gem 'bootstrap-sass'
 
-ruby '2.3.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 # Use postgresql as the database for Active Record
