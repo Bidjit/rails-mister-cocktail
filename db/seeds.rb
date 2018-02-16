@@ -16,7 +16,7 @@ response = JSON.parse(response_serialized)
 
 
 response["drinks"].each do |elt|
-  Cocktail.create(name: elt["strIngredient1"])
+  Ingredient.create(name: elt["strIngredient1"])
 end
 
 puts 'done :)'
