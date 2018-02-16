@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6.col-sm-offset-3">
+        <h2><%= @cocktail[:name] %></h2>
+        <hr>
+        <% @cocktail.doses.each do |d| %>
+          <p><%= d.description %> of <%= d.ingredient.name %> | <%= link_to "delete", dose_path(d),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %></p>
+        <% end %>
+        <hr>
+        <h2>New dose for <%= @cocktail.name %></h2>
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <%= f.association :ingredient, collection: Ingredient.all %>
+          <%= f.input :description %>
+          <%= f.submit "add a dose", class: "btn btn-primary" %>
+        <% end %>
+        <hr>
+        <%= link_to "Back to cocktails list", cocktails_path, class: "btn btn-warning" %>
+      </div>
+    </div>
+  </div>
+</div>
