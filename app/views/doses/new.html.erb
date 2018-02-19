@@ -2,7 +2,7 @@
   <div class="container">
     <h2>New dose for <%= @cocktail.name %></h2>
     <%= simple_form_for [@cocktail, @dose] do |f| %>
-      <%= f.association :ingredient, collection: @ingredients %>
+      <%= f.association :ingredient, collection: @ingredients.sort_by { |i| i.name.downcase } %>
       <%= f.input :description %>
       <%= f.submit "add a dose", class: "btn btn-primary" %>
     <% end %>

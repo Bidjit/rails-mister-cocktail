@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="row">
+        <% @cocktails.each do |cocktail| %>
+          <div class="col-xs-12 col-md-6">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://www.destinationcocktails.fr/sites/default/files/styles/recette_details_without_ambiance/public/recettes/visus_cocktail/214.png?itok=QyDpdS1U')">
+              <h2><%= cocktail.name %></h2>
+              <div class="card-description">
+              <% cocktail.doses.each do |dose| %>
+                <p><%= dose.description %> of <%= dose.ingredient.name %></p>
+              <% end %>
+              </div>
+                <%= link_to "",cocktail_path(cocktail), class: "card-link-show" %>
+                <%= link_to "delete",cocktail_path(cocktail), class: "card-link-delete" %>
+            </div>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--
+https://www.destinationcocktails.fr/sites/default/files/styles/recette_details_without_ambiance/public/recettes/visus_cocktail/214.png?itok=QyDpdS1U
+
+http://www.drinksanytime.com/wp-content/uploads/2014/04/hot-girl-cocktail-bar.jpg
+ -->
